@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: fff;
+    color: #5d5d5d;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+    
+}
+/* MAIN NAV */
+.nav-bar {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.nav-bar li {
+   display: inline-block;
+   margin-left: 40px;
+}
+
+.nav-bar li button {
+    background-color: inherit;
+    border: none;
+    color: white;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+    padding: 8px 0;
+}
+
+.nav-bar li button:hover {
+    border-bottom: 2px solid #99BADD;
+}
+/* May also need to add :active */
+
+h1 {
+    font-weight: 530;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+header {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("hero.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    top: 25%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+h3 {
+    position: absolute;
+    top: 42%;
+    left: 44%;
+    color: white;
+}
+
+.featured-recipes {
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 300px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    left: 23%;
+    
+}
+
+.recipe-1 {
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.recipe-name {
+    text-align: center;
+}
+ .logo {
+    height: 150px;
+    width: auto;
+    float: left;
+    margin-top: 0px;
+} 
+
+.logo-black {
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+} */
+
+/* section {
+    display: block;
+} */
+
+footer {
+    padding: 40px;
+    background-color: #333;
+    color: #e6e6e6;
+    font-size: 80%;
+}
+.footer-nav {
+    text-decoration: none;
+    list-style: none;
+    float: left
+}
+
+.my_page_box {
+    position: absolute;
+    width: 1200px;
+    left: 15%;
+    top: 25%;
+    background-color: white;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+  
+  /* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+  
+  /* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+  
+  /* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+  
+  /* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.recipe_obj {
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
+img {
+    border-radius: 10px;
+    height: 250px;
+    width: 250px;
+}

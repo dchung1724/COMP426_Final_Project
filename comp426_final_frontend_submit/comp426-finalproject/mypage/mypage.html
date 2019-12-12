@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Food Build</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/my_page.css">
+        <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="my_page.js" type="module"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="row">
+                <!-- ADD LOGOS LATER
+                <img src="resources/images/logo.png" alt="Omnifood logo" class="logo-black"> -->
+                <img src="logotransparent.png" alt="Food Build logo" class="logo">
+                <ul class="nav-bar">
+                    <!-- <li>Home</li> -->
+                    <li><a href="../homepage/homepage.html"><button type="button">Home</button></a></li>
+                    <li><a href="../ike/index.html"><button type="button">Find Recipe</button></a></li>
+                    <li><a href="../ike/createRecipe.html"><button type="button">Create Recipe</button></a> </li>
+                    <li><button type="button">My Page</button></li>
+                </ul>
+            </div>
+            <div class="my_page_box">
+                <div class="tab">
+                    <button class="tablinks" id="recipebutton" onclick="openCity(event, 'My_Recipe')">My Recipe</button>
+                    <button class="tablinks" id="likedbutton" onclick="openCity(event, 'Liked')">Liked</button>
+                    <button class="tablinks" id="savedbutton" onclick="openCity(event, 'Saved')">Saved</button>
+                </div>
+                  
+                <div id="My_Recipe" class="tabcontent">
+                    <div class="Recipes">
+                        
+                    </div>
+                </div>
+                  
+                <div id="Liked" class="tabcontent">
+                    <div class="Liked_Recipes">
+
+                    </div>
+                </div>
+                  
+                <div id="Saved" class="tabcontent">
+                    <div class="Saved_Recipes">
+
+                    </div>
+                </div>
+                  
+            </div>
+        </header>
+        
+
+        <footer class="section-features js--section-features" id="features">
+            <div class="row">
+                <h2>An easier way to manage your diet</h2>
+                <p class="about-us">Hello, we're Food Build, a better way to share and build recipes. We make it easier to
+                    plan your diets by showing you the 
+                    nutritional facts of each ingredient and the total nutrition of your dish. Start building your diet today!
+                </p>
+            </div>
+        </footer>
+    
+        <script>
+            function openCity(evt, cityName) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+              }
+              document.getElementById(cityName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+        </script>
+    </body>
+
+    
+
+</html>

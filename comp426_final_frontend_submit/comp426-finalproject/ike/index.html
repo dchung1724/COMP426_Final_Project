@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Find Recipes</title>
+
+        <!-- Include links to CSS stylesheets below -->
+        <link rel="stylesheet" href="style.css"/>        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="918739895505-onbd1fh07cgifr6pvqd5mtdef9eo477p.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="row">
+
+                    <img src="logotransparent.png" alt="Food Build logo" class="logo">
+                    <ul class="nav-bar">
+                        
+                        <li><a href="../homepage/homepage.html"><button class="home-button" type="button">Home</button></a></li>
+                        <li><button type="button">Find Recipe</button></li>
+                        <li><button class="create-recipe-button" type="submit">Create Recipe</button></li>
+                        <li><button class="my-page-button" type="button">My Recipes</button></li>
+                    </ul>
+            </div>
+            <div class="hero-text-box">
+                    <h1>Find Recipes</h1>
+            </div>
+                    <!--Make sure the form has the autocomplete function switched off:-->
+            
+            </div>
+        </header>
+        <div style="background-color: gray;", id="root">
+        
+        </div>
+
+        <!-- Include links to JavaScript files below -->
+        <!-- TODO: Add link to jQuery here -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="module" src="render.js" ></script>
+    </body>
+</html>

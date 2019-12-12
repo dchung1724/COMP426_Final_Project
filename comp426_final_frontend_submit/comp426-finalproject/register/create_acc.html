@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Food Build</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/create_acc.css">
+        <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="create_acc.js" type="module"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="row">
+                <!-- ADD LOGOS LATER
+                <img src="resources/images/logo.png" alt="Omnifood logo" class="logo-black"> -->
+                <img src="logotransparent.png" alt="Food Build logo" class="logo">
+                <ul class="nav-bar">
+                    <li><a href="../homepage/homepage.html"> <button class="home-button" type="button">Home</button></a></li>
+                    <li><a href="../ike/index.html"><button type="button">Find Recipe</button></a></li>
+                    <li><button type="button">Create Recipe</button></li>
+                    <li><button type="button">My Page</button></li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <div class="login_header">
+                    Create Account
+                </div>
+                <div class="login_logo">
+                    <img src="logotransparent.png" alt="Food Build logo" class="logo" id="login_logo">
+                </div>
+                <div class="login container">
+                    <label for="uname"><b>New Username</b></label>
+                    <input class="username-field" type="text" placeholder="Enter Username" name="uname" required>
+                
+                    <label for="psw"><b>New Password</b></label>
+                    <input class="password-field" type="password" placeholder="Enter Password" name="psw" required>
+                    <button class="register-button" type="submit">Create</button>
+                </div>
+            </div>
+            
+        </header>
+        
+
+        <footer class="section-features js--section-features" id="features">
+            <div class="row">
+                <h2>An easier way to manage your diet</h2>
+                <p class="about-us">Hello, we're Food Build, a better way to share and build recipes. We make it easier to
+                    plan your diets by showing you the 
+                    nutritional facts of each ingredient and the total nutrition of your dish. Start building your diet today!
+                </p>
+            </div>
+        </footer>
+    
+    </body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Food Build</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles/create_acc.css">
+        <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="918739895505-onbd1fh07cgifr6pvqd5mtdef9eo477p.apps.googleusercontent.com">
+        <script src="login.js" type="module"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="row">
+                <img src="logotransparent.png" alt="Food Build logo" class="logo">
+                <ul class="nav-bar">
+                    <li><a href="../homepage/homepage.html"> <button class="home-button" type="button">Home</button></a></li>
+                    <li><a href="../ike/index.html"><button type="button">Find Recipe</button></a></li>
+                    <li><button class="create-recipe-button" type="button">Create Recipe</button></li>
+                    <li><button type="button">My Page</button></li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <div class="login_header">
+                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <script>
+                            function onSignIn(googleUser) {
+                              // Useful data for your client-side scripts:
+                              var profile = googleUser.getBasicProfile();
+                              console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+                              console.log('Full Name: ' + profile.getName());
+                              console.log('Given Name: ' + profile.getGivenName());
+                              console.log('Family Name: ' + profile.getFamilyName());
+                              console.log("Image URL: " + profile.getImageUrl());
+                              console.log("Email: " + profile.getEmail());
+                              async function googleLogin(profile){
+                                try {
+                                const response = await axios({
+                                    method: 'POST',
+                                    url: 'http://localhost:3000/account/login',
+                                    data: {
+                                        "name": profile.getEmail(),
+                                        "pass": profile.getId(),
+                                    }
+                                });
+                                alert('Login Successful!');
+                                return response.data;
+                                }
+                                catch(err) {
+                                    const register = await axios({
+                                        method: 'POST',
+                                        url: 'http://localhost:3000/account/create',
+                                        data: {
+                                            "name": profile.getEmail(),
+                                            "pass": profile.getId(),
+                                            "data": {
+                                                "description": "Google"
+                                            }
+                                        }
+                                    });
+
+                                    const response = await axios({
+                                    method: 'POST',
+                                    url: 'http://localhost:3000/account/login',
+                                    data: {
+                                        "name": profile.getEmail(),
+                                        "pass": profile.getId(),
+                                    }
+                                    });
+
+                                    return response.data;
+                                }
+
+                              }
+                              googleLogin(profile).then((object) => {
+                                let jwt = object.jwt;
+                                let username = object.name;
+                                localStorage.setItem('jwt', jwt);
+                                localStorage.setItem('name', username);
+                                window.location.replace('../mypage/mypage.html')
+                              })
+                              
+                                
+                              // The ID token you need to pass to your backend:
+                              var id_token = googleUser.getAuthResponse().id_token;
+                              console.log("ID Token: " + id_token);
+                            
+                        }
+                    </script>
+                    Login
+                </div>
+                <div class="login_logo">
+                    <img src="logotransparent.png" alt="Food Build logo" class="logo" id="login_logo">
+                </div>
+                <div class="login container">
+                    <label for="uname"><b>Username</b></label>
+                    <input class="username-field" type="text" placeholder="Enter Username" name="uname" required>
+                
+                    <label for="psw"><b>Password</b></label>
+                    <input class="password-field" type="password" placeholder="Enter Password" name="psw" required>
+                    <button class="login-button" type="submit">Login</button>
+                    <a href="../register/create_acc.html"><button class="register-button" type="submit">Register</button></a> 
+                </div>
+            </div>
+            
+        </header>
+        
+
+        <footer class="section-features js--section-features" id="features">
+            <div class="row">
+                <h2>An easier way to manage your diet</h2>
+                <p class="about-us">Hello, we're Food Build, a better way to share and build recipes. We make it easier to
+                    plan your diets by showing you the 
+                    nutritional facts of each ingredient and the total nutrition of your dish. Start building your diet today!
+                </p>
+            </div>
+        </footer>
+    
+    </body>
+
+</html>
