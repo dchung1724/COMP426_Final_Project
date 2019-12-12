@@ -5,7 +5,7 @@ const pubRoot = new axios.create({
   baseURL: "http://localhost:3000/public"
 });
 
-async function createRecipe({name = '', description = '', instructions = '', ingredients = '', created_by = '', num_likes = 0, recipe_id = '', picture = null}) {
+async function createRecipe({name = '', description = '', instructions = '', ingredients = '', created_by = '', num_likes = 0, recipe_id = '', picture = 'default.jpg'}) {
     return await pubRoot.post('/recipes/'+'recipe_'+recipe_id, {
       data: {name, description, instructions, ingredients, created_by, num_likes, recipe_id, picture}
     })
@@ -106,8 +106,9 @@ export const handleSubmitButtonPress = async function(event) {
     let changed_ingr = $('.edit.ingr.'+recipeID).val();
     let changed_ingr_list = changed_ingr.split(',');
 
-    let {get_data} = await get_recipe_db();
-    let recipes = get_data.result;
+    data = await get_recipe_db();
+    console.log(data);
+    let recipes = data.data.result;
     Object.keys(recipes).forEach(function (item) {
         let recipe_details = recipes[item]
     
@@ -242,16 +243,7 @@ async function check_status(jwt) {
 
 
 async function handleUnlikeButtonPress(event) {
-    let logging_in = go_login(username, password).then(async function(result) {
-        let getting_likes = async function() {
-            let read_likes = await axios.get("http://localhost:3000/user/recipe_pref", {headers: { Authorization: 'Bearer '+result.jwt}},).then(function (result) {
-                return result;
-            });
-            console.log(read_likes);
-        }
-        getting_likes();
-    })
-    /*
+
     let recipeID = event.target.id.toString();
     let {data} = await get_recipe_db();
     let recipes = data.result;
@@ -303,7 +295,7 @@ async function handleUnlikeButtonPress(event) {
         //location.reload();
 
     })
-    */
+
 
 }
 
@@ -408,6 +400,8 @@ async function handleUnsaveButtonPress(event) {
 async function alertme(event) {
     console.log(event.target.id.toString());
 }
+
+
 
 async function generate_values() {
     let $mypagebox=$('.my_page_box');

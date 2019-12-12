@@ -26,7 +26,7 @@ async function delete_recipe() {
     instructions: "use orange dye not red dye",
     ingredients: ["Orange Dye", "eggs", "flour"],
     created_by: 'Ike Mango',
-    num_likes: 3,
+    num_likes: 10,
     recipe_id: '0',
     picture: 'https://www.lifeloveandsugar.com/wp-content/uploads/2018/03/Orange-Cream-Cupcakes4.jpg'
   });
@@ -36,7 +36,7 @@ async function delete_recipe() {
     instructions: "use red dye not blue dye",
     ingredients: ["Red Dye", "eggs", "flour"],
     created_by: 'Minkyu Jeon',
-    num_likes: 4,
+    num_likes: 10,
     recipe_id: '1'
   });
   await createAuthor({
@@ -45,7 +45,7 @@ async function delete_recipe() {
     instructions: "use blue dye not yellow dye",
     ingredients: ["Blue Dye", "eggs", "flour"],
     created_by: 'Runze Zhang',
-    num_likes: 6,
+    num_likes: 10,
     recipe_id: '2'
   });
   await createAuthor({

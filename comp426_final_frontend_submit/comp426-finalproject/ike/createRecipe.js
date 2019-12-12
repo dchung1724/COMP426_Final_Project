@@ -86,7 +86,8 @@ const pubRoot = new axios.create({
             is_mine: true,
             picture: myPicture
           });
-         })  
+         })
+    window.location = 'http://localhost:5500/comp426-finalproject/ike/index.html#loaded'
   }
   
   renderCreateForm();

@@ -349,6 +349,43 @@ async function handleCommentButtonPress(event) {
 
 }
 
+async function handleUnlikeButtonPress(event) {
+    let id = event.target.id.toString();
+    let {data} = await getAllAuthors();
+    let recipes = data.result;
+    console.log(recipes);
+    console.log(id);
+    Object.keys(recipes).forEach((item) => {
+        let recipe = recipes[item];
+        if (recipe.recipe_id.toString() == id) {
+            let name = recipe.name;
+            let description = recipe.description;
+            let instructions = recipe.instructions;
+            let ingredients = recipe.ingredients;
+            let created_by = localStorage.getItem('jwt');
+            let num_likes = recipe.num_likes-1;
+            let picture = recipe.picture;
+
+            let update_recipe = async function() {
+                console.log(recipe.ingredients);
+                let update_likes = await createRecipe({
+                    name: name,
+                    description: description,
+                    instructions: instructions,
+                    ingredients: ingredients,
+                    created_by: created_by,
+                    num_likes: num_likes,
+                    recipe_id: id,
+                    picture: picture
+                })
+            }
+            update_recipe()
+
+        }
+    })
+    
+}
+
 export const loadIntoDOM = function() {
     const $root = $('#root');
 
@@ -362,6 +399,10 @@ export const loadIntoDOM = function() {
     $('#root').on('click', ".box", handleRecipePress);
 
     $('#root').on('click', ".comment_button_submit", handleCommentButtonPress);
+
+    $('#root').on('click', ".unlike.button", handleUnlikeButtonPress);
+
+    $('#root').on('click', ".save.button", handleSaveButtonPress);
     
 };
 
@@ -542,7 +583,8 @@ const loadSocial = function(recipe) {
     let editButton = $(`<button class="button" id="editBtn"><i class="material-icons">edit</i></button>`);
     let deleteButton = $(`<button class="button" id="deleteBtn"><i class="material-icons">delete</i></button>`);
     let likeButton = $(`<button class="button" id="likeBtn"><i class="material-icons"></i>like</button>`);
-    let unlikeButton = $(`<button class="button" id="unlikeBtn"><i class="material-icons"></i>unlike</button>`);
+    let unlikeButton = $(`<button class="unlike button" id=${recipe.recipe_id}><i class="material-icons"></i>unlike</button>`);
+    let saveButton = $(`<button class="save button" id="${recipe.recipe_id}"><i class="material-icons"></i>save</button>`);
     let buttons = $(`<div class="btns"></div>`);
     if(recipe.created_by === localStorage.getItem('name')) {
         buttons.append(editButton,deleteButton);
@@ -551,6 +593,8 @@ const loadSocial = function(recipe) {
         if(localStorage.getItem('jwt') !== null) {
             buttons.append(likeButton);
             buttons.append(unlikeButton);
+            buttons.append(saveButton);
+            
         }
            
     }
