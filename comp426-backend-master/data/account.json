@@ -1,0 +1,25 @@
+{
+  "users": {
+    "dchung1724": {
+      "passwordHash": "$2a$10$5sbE0avhdW8wMzYmW/n0BeKAnSsVnBcdnnHP./m2afTFNUfEdmy16",
+      "data": {
+        "role": 2,
+        "description": "Laxy..."
+      }
+    },
+    "maxjeon": {
+      "passwordHash": "$2a$10$So0hyMG/j6LvaT5NBUvzs..tjEDPh3DIRjnypV7njYooljEgLTFoK",
+      "data": {
+        "role": 2,
+        "description": "Laxy..."
+      }
+    },
+    "hyunc": {
+      "passwordHash": "$2a$10$Buqvry2e1kCpMqalnk1nn.EwBWELUrWH/myXudWYRBiaY8hH5M9Ca",
+      "data": {
+        "role": 2,
+        "description": "Laxy..."
+      }
+    }
+  }
+}

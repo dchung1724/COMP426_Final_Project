@@ -1,0 +1,75 @@
+{
+  "recipes": {
+    "recipe_2": {
+      "name": "Blue Cupcake",
+      "description": "I baked it and used blue dye",
+      "instructions": "use blue dye not yellow dye",
+      "ingredients": [
+        "Blue Dye",
+        "eggs",
+        "flour"
+      ],
+      "created_by": "Runze Zhang",
+      "num_likes": 5,
+      "recipe_id": "2",
+      "picture": "default.jpg"
+    },
+    "recipe_0": {
+      "name": "Orange Cupcake",
+      "description": "I baked it and used orange dye",
+      "instructions": "use orange dye not red dye",
+      "ingredients": [
+        "Orange Dye",
+        "eggs",
+        "flour"
+      ],
+      "created_by": "Ike Mango",
+      "num_likes": 2,
+      "recipe_id": "0",
+      "picture": "https://www.lifeloveandsugar.com/wp-content/uploads/2018/03/Orange-Cream-Cupcakes4.jpg"
+    },
+    "recipe_1": {
+      "name": "Red Cupcake",
+      "description": "I baked it and used red dye",
+      "instructions": "use red dye not blue dye",
+      "ingredients": [
+        "Red Dye",
+        "eggs",
+        "flour"
+      ],
+      "created_by": "Minkyu Jeon",
+      "num_likes": 9,
+      "recipe_id": "1",
+      "is_mine": false,
+      "picture": "default.jpg"
+    },
+    "recipe_3": {
+      "name": "Yellow Cupcake",
+      "description": "I baked it and used yellow dye",
+      "instructions": "use yellow dye not orange dye",
+      "ingredients": [
+        "Yellow Dye",
+        "eggs",
+        "flour"
+      ],
+      "created_by": "dchung1724",
+      "num_likes": 4,
+      "recipe_id": "3",
+      "picture": "default.jpg"
+    },
+    "recipe_4": {
+      "name": "Black Cupcake",
+      "description": "I baked it and used black dye",
+      "instructions": "use black dye not yellow dye",
+      "ingredients": [
+        "Black Dye",
+        "eggs",
+        "flour"
+      ],
+      "created_by": "dchung1724",
+      "num_likes": 2,
+      "recipe_id": "4",
+      "picture": "default.jpg"
+    }
+  }
+}
